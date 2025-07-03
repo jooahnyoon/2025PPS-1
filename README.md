@@ -26,7 +26,22 @@ for(auto it = m.begin(); it != m.end(); ++it)를 사용, m.end()-1에 해당하�
 
 ## A003. Plus One
 ![A003](./captures/A003.png)
+input형태가 [1,2,3]이런 구조라서, 일단 getline(cin, line)으로 전체를 string으로 읽어들이고 
+그중에서 숫자만 뽑아서 int로 변형해서 g.push_back(n);을 한다. 
+원래는 string 123을 int 123로 만든후 +1을 하고 그냥 124를 [1,2,4]의 형태로 바꾸는 간단한 방식을 생각했으나,
+문제에서 사용하는 함수는 vector<int>digits을 인자로 받고 있기에, vector<int>g자체를 인자로 전달하는 방식으로 구현해야됨을 깨달았다. 
+맨 뒤의 자리부터 확인하기에 for문에서 i는 digits.size()-1부터 시작하도록 했고, 
+만약 한번이라도 9보다 작은 수가 나오면 +1을 하고 바로 return하도록 했다. 그렇지 않은 경우 즉 숫자가 9인경우에는 
+계속해서 현재 값을 0으로 바꾸고 앞의 자리를 확인하도록 했다. 만약 모두 9가 입력된 숫자라서 for반복문을 
+빠져나온 경우에는 digits.insert(digits.begin(),1);을 사용해서 맨 앞에 1을 추가하도록 구현했다.  
 
 ## A004. 나누어 떨어지는 숫자 배열
 ![A004](./captures/A004.png)
+[10,45,39] 이런식으로 입력이 받았다고 했을때, [ , ] 이 3가지를 모두 공백으로 변환하고,
+istringstream으로 공백을 처리하여 숫자만 int로 변환하여 vector <int> g에 push_back한다.
+solution 함수에 g를 인자로 받고, 처음부터 끝까지 하나씩 divisor로 나눴을때 0으로 나눠떨어지는지를 판별, 
+해당하는 경우에 answer.push_back를 한다. for반복문이 끝난후에는 empty인지를 판별하여 해당하는 경우 -1를 push_back한다. 
+그리고 처음부터 끝까지를 sort한다. 
 
+## A005. 스킬트리 
+![A005](./captures/A005.png)
