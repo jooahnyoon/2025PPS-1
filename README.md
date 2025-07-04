@@ -45,3 +45,9 @@ solution 함수에 g를 인자로 받고, 처음부터 끝까지 하나씩 divis
 
 ## A005. 스킬트리 
 ![A005](./captures/A005.png)
+skill와 skill_trees를 입력받고, 
+solution 함수에서 각각의 skill_trees를 하나씩 꺼내서 skill와 비교,
+skill_trees[i]에서 문자 한개씩 꺼내서 skill안에 들어있는지 skill.find(c)를 이용해 찾기 
+찾은 경우에 string find에 추가한다. 
+마지막으로 처음부터 find의 size까지의 문자가 동일한지 판별
+같은 경우에 answer를 +1한다. 
