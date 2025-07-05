@@ -51,3 +51,20 @@ skill_trees[i]에서 문자 한개씩 꺼내서 skill안에 들어있는지 skil
 찾은 경우에 string find에 추가한다. 
 마지막으로 처음부터 find의 size까지의 문자가 동일한지 판별
 같은 경우에 answer를 +1한다. 
+
+## A006. 문자열 내 p와 y의 개수
+![A006](./captures/A006.png)
+main에서는 string을 입력받고 각각의 값이 p P y Y에 해당하는 경우
+string s에 소문자로 바꿔서 추가한다. 
+solution 메서드에서는 count를 0으로 초기화하고, 
+s의 각 문자가 p인 경우 count를 +1 y인경우 -1하여 
+count값이 0이 되는 경우에 p, y의 갯수가 같음을 의미하기에 
+true(1)를 반환, 그외의 경우 false(0)을 반환한다. 
+
+## A007. 음계 판별하기
+![A007](./captures/A007.png)
+main에서 배열 8자리를 입력받는다. 
+solution 메서드에서 8자리를 판별할때 asc, des 두가지를 사용한다.
+index 1부터 시작해서, 현재 값이 이전 array 값보다 크면 asc를 +1하고, 작으면 des +1한다.
+asc = 7이면 오름차순정렬이기에 ascending반환, des = 7이면 내림차순정렬이기에 descending반환
+그외의 경우 mixed를 반환한다. 
