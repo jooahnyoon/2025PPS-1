@@ -95,3 +95,18 @@ bool type answer를 false로 바꾼다. answer를 반환한다.
 그다음 구간 next와 비교해서 중복이 되는 경우 count를 1증가한다.
 최종적으로 count가 1보다크면 중복횟수count를 newline에 추가하고, 반복된 구간도 추가한다. 
 마지막 문자는 그다음 구간이 없어서 비교할 수 없으므로 마지막에 판별해준다. 
+
+## A011. 실패율
+![A011](./captures/A011.png)
+해당하는 경우 1/8 -> 3/7 -> 2/4 이렇게 자르기 위해 
+처음에 입력받은 값을 sort한 후, solution메서드에 보내준다.
+stage가 1부터 시작이기에 j=1부터 시작, 현재 stages[j-1]의 값이 i와 같다면 count를 계속 증가한다.
+만약 달라질 경우, 분모가 0이 되면 안되기에 stages.size()가 0이 아닌지 판별, 
+실패율 배열에 현재 count값을 stages.size로 나눈 값을 저장한다. 현재 for문을 break 빠져나간후,
+처음부터 count한 횟수만큼 삭제한다. 이과정을 i가 stageN에 도달할때까지 반복한다.
+실패율을 기준으로 sorting 해야하는데 이과정에서 현재 stage가 무엇인지 즉, index값을 기억해야되서
+vector<pair<double, int>>p를 선언했다. 실패율 배열과 index(현재 stage값)를 같이 저장시킨다. 
+sort할때 실패율이 더 큰것을 앞에 오도록 return하지만 실패율이 같다면, 
+두번째 stage의 값이 작은것이 앞에 오도록 return 한다. 
+마지막으로 vector<int> answer를 선언하고 p에서 pair<double, int>k로 하나씩 넘기면서 
+k.second stage값을 push_back한다.  
