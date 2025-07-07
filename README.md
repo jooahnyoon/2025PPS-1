@@ -110,3 +110,16 @@ sort할때 실패율이 더 큰것을 앞에 오도록 return하지만 실패율
 두번째 stage의 값이 작은것이 앞에 오도록 return 한다. 
 마지막으로 vector<int> answer를 선언하고 p에서 pair<double, int>k로 하나씩 넘기면서 
 k.second stage값을 push_back한다.  
+
+## A012. Count Primes
+![A012](./captures/A012.png)
+입력된 n보다 작은 값중에 소수가 몇개인지를 구하는 문제
+수작업을 하되 최대한 경우의 수를 줄이도록 
+2보다 작으면 0, 2인경우 1을 return.
+i=3부터 시작, 그외에 짝수인경우는 소수가 아니므로 i+=2로 제외한다.
+소수는 1과 본인을 제외하고 약수 즉 나누어떨어지는 수가 0인 경우이므로,
+2부터 i보다 작을때까지 나누어떨어지지를 판별하여 0이 되는 경우 count를 증가시켜 
+count가 0인경우 소수이므로, num을 증가한다. 
+
+## A013. Single Number
+![A013](./captures/A013.png)
